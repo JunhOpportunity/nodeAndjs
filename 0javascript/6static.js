@@ -5,7 +5,7 @@ class Fruit {
     this.emoji = emoji;
   }
 
-  // 클래스 레벨의 메서드, 이것은 this를 참조할 수 없다.
+  // 클래스 레벨의 메서드, this를 참조할 수 없다.
   static makeRandomFruit() {
     return new Fruit('banana', 'banana');
   }
@@ -16,7 +16,7 @@ class Fruit {
   };
 }
 
-const banana = Fruit.makeRandomFruit();
+const banana = Fruit.makeRandomFruit(); // 이런식으로 클래스이름.클래스레벨의메서드 로 사용
 
 Math.pow(); // 이것도 정적 프로퍼티(재사용성을 높인 예시 중 하나)
 
