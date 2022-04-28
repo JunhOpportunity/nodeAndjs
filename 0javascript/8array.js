@@ -86,11 +86,12 @@ fruits.forEach((value) => console.log(value));
 
 // 조건에 맞는(콜백함수) 아이템을 찾을 때
 // finde : 제일 먼저 조건에 맞는 아이템 반환
-const item1 = {name : 'A', price: 2};
-const item2 = {name : 'B', price: 3};
-const item3 = {name : 'C', price: 4};
+const item1 = { name: 'A', price: 2 };
+const item2 = { name: 'B', price: 3 };
+const item3 = { name: 'C', price: 4 };
 const products = [item1, item2, item3, item2];
-const found = products.find((value) => { // value는 products의 속성들
+const found = products.find((value) => {
+  // value는 products의 속성들
   return value.name == 'B';
 });
 
@@ -105,3 +106,42 @@ result = product.every((item) => item.name === 'B');
 
 // 조건에 맞는 모든 아이템들을 새로운 배열로!
 result = products.filter((item) => item.name === 'B');
+
+// Map : 배열의 아이템들을 각각 다른 아이템으로 매핑할 수 있는, 변환해서 새로운 배열 생성
+const nums = [1, 2, 3, 4, 5];
+result = nums.map((item) => item * 2); // 모두 2배씩
+result = nums.map((item) => { // 짝수만 2배씩
+  if (item % 2 === 0) {
+    return item * 2;
+  } else {
+    return item;
+  }
+})
+// 사이즈 확인
+nums.size;
+// 존재하는지 확인
+nums.has.('key1');
+// 순회
+nums.forEach((value, key) => console.log(key, value));
+// 찾기
+console.log(nums.get('key1'));
+// 삭제
+nums.delete('key3');
+// 전부삭제
+nums.clear();
+
+// Flatmap : 중첩된 배열을 쫙 펴줌
+result = ['dream', 'coding'].flatMap((text) => text.split(''));
+// ['d', 'r', 'e', 'a', 'm', 'c', ...]
+
+// sort : 문자열 형태의 오름차순으로 요소 정렬 (???)
+const numbers = [0, 5, 4, 2, 1, 10];
+numbers.sort();
+numbers.sort((a, b) => a - b); // < 0 : a가 앞으로 정렬(오름차순) / > 0 : b가 앞으로 정렬(내림차순)
+
+// reduce : 배열의 요소들을 접어서 값을 하나로 만듬
+result = [1, 2, 3, 4, 5].reduce((sum, value) => {
+  sum += value;
+  return sum;
+}, 0); // sum을 0으로 초기화
+result = [1, 2, 3, 4, 5].reduce((sum, value) => (sum += value), 0);
