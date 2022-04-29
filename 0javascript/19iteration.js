@@ -4,6 +4,10 @@
 // 순회 가능한 객체다. 라는 것을 의미
 // 순회가 가능하면 계속해서 반복하는 반복문, 연산자들을 사용할 수 있다.
 
+// iterator (): {
+//   next(): 다음값
+// }
+
 const array = [1, 2, 3, 4];
 console.log(array.values()); // Object [Array Iterator] {}
 console.log(array.entries()); // Object [Array Iterator] {}
