@@ -25,3 +25,4 @@ runInDelay(() => {
   console.log('timer gogo');
 }, -2);
 
+'use strict';
