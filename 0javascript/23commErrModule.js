@@ -29,3 +29,11 @@ function processFile(path) {
     console.log('Finally');
   }
 }
+
+// module : 다른 파일에있는 전역변수나 전역함수 사용이 가능한데 module화 하면 불가능.
+let count = 0;
+export default function increase() { // 외부로 노출시킬 함수, 이거 딱 하나만.
+  count++;
+}
+
+import incre from './countmodul.js'; // 하나만 노출시켰기 때문에 우리가 원하는 이름으로 설정 가능
