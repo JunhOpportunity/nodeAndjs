@@ -8,3 +8,7 @@ setTimeout(() => {
   console.log('Timeout!');
   clearInterval(interval); // 해당 interval 멈추기
 }, 6000);
+
+setImmediate(() => {
+  console.log('setImmediate');
+})

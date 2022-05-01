@@ -21,5 +21,21 @@ console.log(newBuf.toString());
 
 // stream 다시 공부해보자.. 재밌는데 시간에 쫓겨서 뭔가 급하게 보느라 집중 X. (4.16 다시 듣기.);
 
-// stream 이랑 pipe 존나 어려움.
+// 4.16 진짜 한 4번 들었는데 이해 X stream 이랑 pipe 존나 어려움.
+
+const fs = require('fs');
+
+const readStream = fs.createReadStream('./file.txt', {
+  highWaterMark: 8, // 기본적으로는 64 kbytes
+  encoding: 'utf-8',
+});
+
+readStream.on('data', (chunk) => {
+  console.log(chunk);
+})
+
+readStream.on('error', (error) => {
+  console.log(error);
+})
+
 
